@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="!errorMsg">
+    <div class="filter-row">
+      <app-search (triggerSearch)="search($event)"></app-search>
+      <app-dropdown class="filter-sort-row" title="Sort By" (selectedOption)="sortBy($event)" [options]="keyMap"></app-dropdown>
+      <app-dropdown class="filter-sort-row" title="Size" (selectedOption)="setSize($event)" [options]="sizeMap"></app-dropdown>
+      <button id="add-row" (click)="add()" class="btn-default">Add</button>
+    </div>
+    <div *ngFor="let dataObject of gridListResponse; let i=index">
+      <app-grid-row [keyMap]="keyMap" [successStatus]="isSuccess" [messageIndex]="isSuccess!==null ? deleteId==dataObject['id'] : null" (deleteNotifier)="deleteRow($event)" (updateNotifier)="updateRow($event)" [rowData]="dataObject" [rowIdentifier]="dataObject['id']">
+      </app-grid-row>
+    </div>
+  </div>
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+
+</div>
+

@@ -1,0 +1,7 @@
+<div class="s-app-dropdown" ngbDropdown>
+    <button class="btn btn-outline-primary" id="dropdown" ngbDropdownToggle>{{title}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdown-width">
+      <button ngbDropdownItem (click)="emitSelected(null)">None</button>
+      <button ngbDropdownItem *ngFor="let key of options.keys()" [ngClass]="{'active':key==activeKey}" (click)="emitSelected(key)">{{options.get(key)}}</button>
+    </div>
+</div>

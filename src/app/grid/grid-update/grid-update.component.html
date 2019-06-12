@@ -1,0 +1,53 @@
+<div class="container placement jumbotron">
+    <div *ngIf="gridRecordToUpdate">
+        <h4 class="align-center">Update</h4>
+        <form #updateForm="ngForm">
+            <fieldset [disabled]="successMsg||errorMsg">
+                <input id="reciever_name" name="recieverName" class="row-margin form-control" placeholder="Recieved by"
+                [(ngModel)]="gridRecordToUpdate.receivedByUserFullName" #recieverName="ngModel" required/>
+        
+                <div [hidden]="recieverName.valid || recieverName.pristine"
+                    class="row-margin alert alert-danger">
+                    Reciever name is required
+                </div>
+        
+                <input id="intended_recipient" placeholder="Intended Recipient" name="intendedRecipient" class="row-margin form-control"
+                [(ngModel)]="gridRecordToUpdate.recipientFullName" #intendedRecipient="ngModel" required/>
+                <div [hidden]="intendedRecipient.valid || intendedRecipient.pristine"
+                    class="row-margin alert alert-danger">
+                    Intended recipient name is required
+                </div>
+        
+                <input id="sender_name" placeholder="Sender name" name="sender_name" class="row-margin form-control"
+                [(ngModel)]="gridRecordToUpdate.sender" #senderName="ngModel" required/>
+                <div [hidden]="senderName.valid || senderName.pristine"
+                    class="row-margin alert alert-danger">
+                    sender name is required
+                </div>
+        
+                <select class="row-margin form-control"  id="status"
+                    required #status="ngModel"
+                    [(ngModel)]="gridRecordToUpdate.status" name="status">
+                    <option [value]="null" [disabled]=true>Status</option>
+                    <option value="Success">Success</option>
+                    <option value="Failed">Failed</option>
+                </select>
+                <div [hidden]="status.valid || status.pristine"
+                    class="row-margin alert alert-danger">
+                    sender name is required
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class='row-margin float-right'>
+        <button type="button" [disabled]="updateForm.invalid" class="btn-default" (click)="update()">Update</button>
+        <button type="button" class="btn-default" (click)="cancel()">Cancel</button>
+    </div>
+    <div class="alert alert-success" *ngIf="successMsg">
+            {{successMsg}}<span class="code" (click)="cancel()">click</span> to go back
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMsg">
+            {{errorMsg}}<span class="code" (click)="cancel()">click</span> to go back
+    </div>
+</div>
+

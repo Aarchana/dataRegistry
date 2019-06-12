@@ -1,0 +1,4 @@
+  <input class="searchTerm" type="text" #searchTerm (keydown)="listenKeyDown($event)" placeholder="search by Sender Id, Receiver Id" />
+  <button type="submit" id="search" (click)="emitSearchTerm(searchTerm.value)" class="searchButton">
+      <i class="icon search">&#xe803;</i>
+  </button>

@@ -1,0 +1,22 @@
+<div class="grid-row-display">
+  <div class="display" *ngIf="!messageIndex; else messageDisplay">
+  <span class="grid-row-items">
+    <div class="row-item" *ngFor="let key of keyMap.keys()"> 
+      <div class="key div-align">{{keyMap.get(key)}}:</div> 
+      <div class="div-align">{{rowData[key]}}</div>
+    </div>
+  </span>
+    <span class="grid-row-buttons">
+        <button id="view-row" class="btn-default" (click)="viewDetails(rowIdentifier)"><i class="icon pencil">&#xe800;</i></button>
+        <button id="delete-row" class="btn-default" (click)="deleteDetails(rowIdentifier)"><i class="icon trash">&#xe807;</i></button>
+    </span>
+  </div>
+  <ng-template #messageDisplay>
+      <span class="success-text" *ngIf="successStatus">
+          Successfully deleted record.
+      </span>
+      <span class="error-text" *ngIf="!successStatus">
+         !Error deleting record
+      </span>
+  </ng-template>
+</div>

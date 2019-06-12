@@ -1,0 +1,79 @@
+@import '../../../base';
+
+.grid-row-display {
+    background: $base_font_contrast_color;
+    width: 100%;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.1);
+    border: 1px solid $base_box_border;
+    min-height: 4rem;
+    padding: 10px;
+    margin: 15px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.grid-row-items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    font-size: 0.9rem;
+}
+
+.grid-row-buttons {
+    width: 10%;
+}
+
+.row-item {
+    flex: 1 0 25%;
+    margin: 5px;
+}
+
+.div-align {
+    display: inline-block;
+    margin: 2px 5px;
+}
+
+
+.key {
+    font-weight: bold;
+}
+
+@media Screen and (max-width: 830px) {
+    .grid-row-display {
+        flex-direction: column;
+    }
+
+    .grid-row-items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .display {
+        display: flex;
+    }
+
+    .btn-default {
+        margin-top: 0.2rem;
+    }
+}
+
+.success-text {
+    color: $base-success-color;
+    font-weight: bolder;
+}
+
+.error-text {
+    color: $base-error-color;
+    font-weight: bolder;
+}
+
+.display {
+    display: inline-flex;
+    align-items: center;
+}

@@ -1,0 +1,45 @@
+@import '../../../base';
+
+.dropdown-item.active {
+    background-color: $base_theme_color;
+}
+
+.s-app-dropdown {
+    display: inline-block;
+}
+
+
+.btn-outline-primary {
+    color: $base_theme_color;
+    border-color: $base_theme_color;
+   }
+
+.btn-outline-primary:hover {
+    background-color: $base_theme_color;
+    color: $base_font_contrast_color;
+    border-color: $base_theme_color;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus, .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    background-color: $base_theme_color;
+    color: $base_font_contrast_color;
+    border-color: $base_theme_color;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: $base_font_contrast_color;
+    text-decoration: none;
+    background-color: $base_theme_color;
+}
+
+button.dropdown-item.active:focus {
+    outline: none;
+}
+
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+    box-shadow: none;
+}

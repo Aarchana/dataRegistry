@@ -1,0 +1,20 @@
+@import '../../../base';
+
+.placement {
+    position: relative;
+    top: 6rem;
+    width: 50%;
+}
+
+@media Screen and (max-width: 830px) {
+
+    .placement {
+        width: 85%;
+    }
+}
+
+.code {
+    font-weight: bolder;
+    text-decoration: $base-theme-color;
+    cursor: pointer;
+}
